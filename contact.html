@@ -1,0 +1,134 @@
+
+ <html>
+ 
+<head>
+ <title>s'enregistrer</title>
+<script type="text/javascript" language="Javascript" >
+<!--
+function exemple(f)
+ {
+   // f désigne le formulaire concerné.
+   // Il s'agit d'une table de tous les éléments du formulaire(zones de texte)
+  
+   f[0].value = "farid chakri"
+   f[1].value = "01-23-45-67-89"
+   f[2].value = "faridchakri@yahoo.fr"
+ }
+function verification()
+{
+        //verification de nom
+        if(document.formulaire.nom.value == "") {
+        alert("Veuillez entrer votre Nom svp");
+        document.formulaire.nom.focus();
+        return false;
+             }
+        else
+        return true;
+        //verification de prenom
+        if(document.formulaire.prenom.value == "") {
+        alert("Veuillez entrer votre prenom svp");
+        document.formulaire.prenom.focus();
+        return false;
+             }
+        else
+        return true;
+        //verification de n_etudiant
+        if(document.formulaire.n_etudiant.value == "") {
+        alert("Veuillez entrer votre n_etudiant svp");
+        document.formulaire.n_etudiant.focus();
+        return false;
+             }
+        else
+        return true;
+        //verification de tel
+        // Puis nous vérifions si le numéro de téléphone
+        // contient des caractères interdits. Une boucle for
+        // vérifie individuellement chaque caractère.
+ 
+        var s;
+        for(var i = 0; i < f[1].value.length; i++)
+        {
+        
+        // le caractuel est stocké dans s.
+        s = f[1].value.charAt(i);
+ 
+        // Caractères valides : espace, parenthèses, "/", "-" et "+".
+        if( !((s >= 0) && (s <= 9))
+        && (s != ' ') && (s != '-') && (s != '+')
+        && (s != '/') && (s != '(') && (s != ')'))
+        {
+        alert('Le numéro de téléphone ne peut comporter que des chiffres, '
+        + 'espaces, parentheses, "/", "-" et "+".');
+        return(false);
+        }
+        }
+        //verification de mail
+        
+        // Puis nous recherchons des espaces dans l'adresse e-mail
+        // '-1' signifie qu'aucun espace n'a été trouvé.
+        if(f[2].value.search(/ /) != '-1')
+        {
+        alert('Une adresse e-mail ne peut contenir un espace !');
+        return(false);
+        }
+  
+        // Pour finir, nous vérifions le format.
+        // Pour cela, nous fractionnons l'adresse en deux.
+        // (avant et après le caractère"@"
+        s = f[2].value.split(/@/);
+  
+        // Avec un seul caractère "@" il ne peut y avoir que deux parties.
+        if((s.length != 2) || s[0] == '' || s[1] == '')
+        {
+        alert('Une adresse e-mail doit avoir le format "Utilisateur@Domain",\n'
+        +'par ex.: "farid.chakri@gmail.com"');
+        return(false);
+        }
+          return(true);
+    
+    //verification de adresse
+        if(document.formulaire.adresse.value == "") {
+        alert("Veuillez entrer votre adresse svp");
+        document.formulaire.adresse.focus();
+        return false;
+             }
+        else
+        return true;
+}
+//-->
+</script>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="F79543">
+<!--<form name="formulaire" action="enregistrer.php" method="post" onSubmit="return verification()"> -->
+<form action="" method="post" name="add">
+<p align="center"><strong><u>Espace Enregistrement: Ajouter un utilisateur</u></strong></p>
+ 
+  <table width="550" border="0" align="center" cellpadding="5" cellspacing="0" bgcolor="#eeeeee" class="tableaux">
+ 
+    <tr><td>Entrer votre nom</td>
+      <td><input name="nom"  type="text" id="nom"></td></tr>
+ 
+    <tr><td>Entrer votre prenom</td>
+      <td><input name="prenom"  type="text" id="prenom"></td></tr>    
+ 
+    <tr><td>Entrer votre numero d'etudiant</td>
+      <td><input name="n_etudiant"  type="text" id="n_etudiant"></td></tr>
+ 
+    <tr><td>Entrer votre tel </td>
+      <td><input name="tel" type="texte" id="tel"></td></tr>
+ 
+    <tr><td>Entrer votre email</td>
+      <td><input name="mail"  type="text" id="mail"></td></tr>
+ 
+    <tr><td>Entrer votre adresse</td>
+      <td><input name="adresse"  type="text" id="adresse"></td></tr>
+ 
+    <tr><td height="50" colspan="2"><div align="center">
+          <input type="submit" name="Submit" value="Ajouter cette utilisateur" onSubmit="return verification()">
+        </div></td></tr>
+ 
+  </table>
+</form>
+</body>
+</html>

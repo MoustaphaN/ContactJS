@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verification du contact</title>
+	<style>
+		img{
+			width: 20px;
+			height: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<form onsubmit="return checkform(this);">
+  <p>
+    <input type="hidden" name="required" id="required"
+	 value="name,surname,email,msg,radio" />
+    <label for="name">Prénom<span>*</span></label>
+    <input type="text" name="name" id="name" />
+  </p>
+  <p>
+    <label for="surname">Nom<span>*</span></label>
+    <input type="text" name="surname" id="surname" />
+  </p>
+  <p>
+    <label for="email">E-mail<span>*</span></label>
+    <input type="text" name="email" id="email" />
+  </p>
+ 
+  <p>
+    <label for="msg">Votre message<span>*</span></label>
+    <textarea name="msg" id="msg"></textarea>
+  </p>
+
+  <p>
+  	<label>Homme</label><input type="radio" name="gender" value="homme" id="radio"> <br>
+    <label>Femme</label><input type="radio" name="gender" value="femme" id="radio"> <br>
+  </p>
+
+   <p>
+    <input type="submit" value="Envoyer" />
+  </p>
+</form>
+
+
+	<script src="js/js.js"></script>
+</body>
+</html>
